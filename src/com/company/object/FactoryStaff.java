@@ -5,7 +5,6 @@ import java.util.Random;
 public class FactoryStaff {
 
 
-
     private static final Random random = new Random();
 
     public static String generate() {

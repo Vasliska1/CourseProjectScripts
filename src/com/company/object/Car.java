@@ -12,7 +12,7 @@ public class Car {
         return String.format(TEMPLATES, number());
     }
 
-    public static String number(){
+    public static String number() {
         return String.valueOf("ВА" + 100 + random.nextInt(999) + "С");
     }
 }

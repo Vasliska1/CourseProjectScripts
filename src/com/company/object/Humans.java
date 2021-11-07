@@ -1,6 +1,5 @@
 package com.company.object;
 
-import java.time.LocalDate;
 import java.util.Random;
 
 public class Humans {

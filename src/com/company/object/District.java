@@ -6,6 +6,7 @@ public class District {
 
     private static final Random random = new Random();
     private static int i = 1;
+
     public static String generate() {
         return String.format(TEMPLATES, i++, generateRandomName(), 1 + random.nextInt(255));
     }
@@ -161,7 +162,6 @@ public class District {
                     "Пушкинский район",
                     "Фрунзенский район",
                     "Центральный район",
-
 
 
             };

@@ -20,7 +20,8 @@ public class Location {
     private static final String TEMPLATES = "INSERT INTO location(district_id, address) VALUES(%s,'%s');";
 
     private static final String[] NAME =
-            {       "Магдалинский пер.",
+            {
+                    "Магдалинский пер.",
                     "Мартынова наб.",
                     "Михаила Дудина ул.",
                     "Магнитогорская ул.",

@@ -7,6 +7,7 @@ public class Factory {
 
     private static final Random random = new Random();
     public static int i = 1;
+
     public static String generate() {
         return String.format(TEMPLATES, i++);
     }

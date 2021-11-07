@@ -13,8 +13,7 @@ public class Clients {
     private static final String TEMPLATES = "INSERT INTO clients(human_id, location_id, subscription_id) VALUES( %s, %s, %s);";
 
 
-    public static int rnd(int min, int max)
-    {
+    public static int rnd(int min, int max) {
         max -= min;
         return (int) (Math.random() * ++max) + min;
     }
