@@ -102,11 +102,13 @@ CREATE TABLE delivery_fact (
                                order_id INT REFERENCES order_(id),
                                deliveryman_id INT REFERENCES deliveryman(id)
                                                       ON DELETE SET NULL,
-                               delivery_date date,
-                               delivery_fact boolean not NULL
+                               delivery_date date DEFAULT null,
+                               delivery_fact boolean DEFAULT false
 );
 
 CREATE TABLE factory_staff(
                               factory_id INT REFERENCES factory(id),
                               human_id INT REFERENCES human(id)
 );
+
+
