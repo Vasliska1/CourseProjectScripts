@@ -5,16 +5,16 @@ import java.util.Random;
 public class District {
 
     private static final Random random = new Random();
-
+    private static int i = 1;
     public static String generate() {
-        return String.format(TEMPLATES, generateRandomName(), 1 + random.nextInt(320));
+        return String.format(TEMPLATES, i++, generateRandomName(), 1 + random.nextInt(255));
     }
-    private static int i = 0;
+
     private static String generateRandomName() {
         return NAME[random.nextInt(144)];
     }
 
-    private static final String TEMPLATES = "INSERT INTO district(name, id_city) VALUES('%s', %s);";
+    private static final String TEMPLATES = "INSERT INTO district(id, name, city_id) VALUES(%s, '%s', %s);";
 
     private static final String[] NAME =
             {"Академический",

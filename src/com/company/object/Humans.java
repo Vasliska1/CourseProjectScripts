@@ -26,7 +26,7 @@ public class Humans {
         return String.format(TEMPLATES, generateRandomFirstName(), generateRandomLastName(), generateRandomContacts());
     }
 
-    private static final String TEMPLATES = "INSERT INTO humans(name, surname, phone_number) VALUES('%s', '%s', '%s');";
+    private static final String TEMPLATES = "INSERT INTO human(name, surname, phone_number) VALUES('%s', '%s', '%s');";
 
     private static final String[] FIRST_NAME =
             {

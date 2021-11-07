@@ -9,7 +9,7 @@ public class Order {
     private static final Random random = new Random();
     private static final LocalDate begin_date = LocalDate.of(2018, 10, 1);
     public static String generate() {
-        return String.format(TEMPLATES, 2801 + random.nextInt(11000), generateRandomDate(), 1 + random.nextInt(1500), 1 + random.nextInt(2));
+        return String.format(TEMPLATES, 1+ random.nextInt(6000), generateRandomDate(), 1 + random.nextInt(1500), 1 + random.nextInt(2));
     }
 
     private static LocalDate generateRandomDate() {

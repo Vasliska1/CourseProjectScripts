@@ -27,8 +27,13 @@ public class Main {
         generator.generatorClients();
         generator.generatorOrders();
         generator.generatorProduct();
+
+        generator.generatorFactoryProd2();
+        generator.generatorFactoryProd3();
+        generator.generatorFactoryProd4();
         generator.generatorDeliveryFact();
         generator.generatorDeliveryFact2();
+generator.generatorFactoryProd5();
         try (PrintWriter out = new PrintWriter("scripts/data.sql", "UTF-8"))
         {
 
@@ -58,6 +63,18 @@ public class Main {
 
 
             for (String s : generator.factoryProd) {
+                out.println(s);
+            }
+            for (String s : generator.factoryProd2) {
+                out.println(s);
+            }
+            for (String s : generator.factoryProd3) {
+                out.println(s);
+            }
+            for (String s : generator.factoryProd4) {
+                out.println(s);
+            }
+            for (String s : generator.factoryProd5) {
                 out.println(s);
             }
 
@@ -132,6 +149,10 @@ public class Main {
     private ArrayList<String> district = new ArrayList<>();
     private ArrayList<String> factory = new ArrayList<>();
     private ArrayList<String> factoryProd = new ArrayList<>();
+    private ArrayList<String> factoryProd2 = new ArrayList<>();
+    private ArrayList<String> factoryProd3 = new ArrayList<>();
+    private ArrayList<String> factoryProd4 = new ArrayList<>();
+    private ArrayList<String> factoryProd5 = new ArrayList<>();
     private ArrayList<String> car = new ArrayList<>();
     private ArrayList<String> factoryStaff = new ArrayList<>();
     private ArrayList<String> deliveryman = new ArrayList<>();
@@ -145,13 +166,13 @@ public class Main {
     private ArrayList<String> delivF2 = new ArrayList<>();
 
     public void generatorHuman() {
-        for (int i = 0; i < 1100; i++) {
+        for (int i = 0; i < 11000; i++) {
             humans.add(Humans.generate());
         }
     }
 
     public void generatorCity() {
-        for (int i = 0; i < 320; i++) {
+        for (int i = 0; i < 255; i++) {
             city.add(City.generate());
         }
     }
@@ -167,8 +188,33 @@ public class Main {
     }
 
     public void generatorFactoryProd() {
-        for (int i = 0; i < 1500; i++) {
+        for (int i = 1; i < 1500; i++) {
             factoryProd.add(FactoryProd.generate());
+        }
+    }
+
+    public void generatorFactoryProd2() {
+        FactoryProd.i=1;
+        for (int i = 1; i < 1000; i++) {
+            factoryProd.add(FactoryProd.generate1());
+        }
+    }
+    public void generatorFactoryProd3() {
+        FactoryProd.i=1;
+        for (int i = 1; i < 500; i++) {
+            factoryProd.add(FactoryProd.generate2());
+        }
+    }
+    public void generatorFactoryProd4() {
+        FactoryProd.i=1;
+        for (int i = 1; i < 200; i++) {
+            factoryProd.add(FactoryProd.generate3());
+        }
+    }
+    public void generatorFactoryProd5() {
+        FactoryProd.i=100;
+        for (int i = 1; i < 500; i++) {
+            factoryProd.add(FactoryProd.generate4());
         }
     }
 
@@ -198,13 +244,13 @@ public class Main {
         }
     }
     public void generatorOrders() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 2000; i++) {
             orders.add(Order.generate());
         }
     }
     public void generatorProduct() {
         for (int i = 0; i < 2000; i++) {
-            productList.add(Order.generate());
+            productList.add(ProductList.generate());
         }
     }
     public void generatorDeliveryFact() {
@@ -221,21 +267,21 @@ public class Main {
 
 
 
-    private static String sqlStatic = "INSERT INTO antistress(name) VALUES('Поп-ит');\n" +
-            "INSERT INTO antistress(name) VALUES('Симл-димпл');\n" +
-            "INSERT INTO antistress(name) VALUES('Сквиш'); \n" +
-            "INSERT INTO antistress(name) VALUES('Осьминог-перевертыш'); \n" +
-            "INSERT INTO antistress(name) VALUES('Спинер'); \n" +
-            "INSERT INTO stress_kind(name) VALUES('Проблемы с концентрацией внимания');\n" +
-            "INSERT INTO stress_kind(name) VALUES('Проблемы с нервозностью');\n" +
-            "INSERT INTO stress_kind(name) VALUES('Проблемы с бессоницей');" +
-            "INSERT INTO stress_kind(name) VALUES('Проблемы с нервным тиком');" +
-            "INSERT INTO stress_kind(name) VALUES('Проблемы с забывчивостью');" +
-            "INSERT INTO antistress_to_stress(name) VALUES(1,1);" +
-            "INSERT INTO antistress_to_stress(name) VALUES(2,2);\n" +
-            "INSERT INTO antistress_to_stress(name) VALUES(3,3);\n" +
-            "INSERT INTO antistress_to_stress(name) VALUES(4,4);\n" +
-            "INSERT INTO antistress_to_stress(name) VALUES(5,5);\n" +
+    private static String sqlStatic = "INSERT INTO antistress(kind) VALUES('Поп-ит');\n" +
+            "INSERT INTO antistress(kind) VALUES('Симл-димпл');\n" +
+            "INSERT INTO antistress(kind) VALUES('Сквиш'); \n" +
+            "INSERT INTO antistress(kind) VALUES('Осьминог-перевертыш'); \n" +
+            "INSERT INTO antistress(kind) VALUES('Спинер'); \n" +
+            "INSERT INTO stress_kind(stress) VALUES('Проблемы с концентрацией внимания');\n" +
+            "INSERT INTO stress_kind(stress) VALUES('Проблемы с нервозностью');\n" +
+            "INSERT INTO stress_kind(stress) VALUES('Проблемы с бессоницей');\n" +
+            "INSERT INTO stress_kind(stress) VALUES('Проблемы с нервным тиком');\n" +
+            "INSERT INTO stress_kind(stress) VALUES('Проблемы с забывчивостью');\n" +
+            "INSERT INTO antistress_to_stress(stress_id,  antistress_id) VALUES(1,1);" +
+            "INSERT INTO antistress_to_stress(stress_id,  antistress_id) VALUES(2,2);\n" +
+            "INSERT INTO antistress_to_stress(stress_id,  antistress_id) VALUES(3,3);\n" +
+            "INSERT INTO antistress_to_stress(stress_id,  antistress_id) VALUES(4,4);\n" +
+            "INSERT INTO antistress_to_stress(stress_id,  antistress_id) VALUES(5,5);\n" +
             "INSERT INTO subscription(subscription_kind) VALUES('обычная');\n" +
             "INSERT INTO subscription(subscription_kind) VALUES('VIP');\n"
             ;

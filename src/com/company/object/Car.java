@@ -6,7 +6,7 @@ public class Car {
 
 
     private static final Random random = new Random();
-    private static final String TEMPLATES = "INSERT INTO car(number_) VALUES(%s);";
+    private static final String TEMPLATES = "INSERT INTO car(number_) VALUES('%s');";
 
     public static String generate() {
         return String.format(TEMPLATES, number());

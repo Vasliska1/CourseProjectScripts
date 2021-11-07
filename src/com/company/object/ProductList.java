@@ -10,6 +10,6 @@ public class ProductList {
         return String.format(TEMPLATES, 1 + random.nextInt(1000), 1 + random.nextInt(5), 1 + random.nextInt(1000));
     }
 
-    private static final String TEMPLATES = "INSERT INTO product_list(id_order, antistress_id, count_) VALUES( %s, %s, %s);";
+    private static final String TEMPLATES = "INSERT INTO product_list(order_id, antistress_id, count_) VALUES( %s, %s, %s);";
 
 }

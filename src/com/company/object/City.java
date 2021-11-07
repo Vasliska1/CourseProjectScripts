@@ -5,15 +5,16 @@ import java.util.Random;
 public class City {
 
     private static final Random random = new Random();
+    public static int j = 1;
     public static String generate() {
-        return String.format(TEMPLATES, generateRandomName(), 1 + random.nextInt(5));
+        return String.format(TEMPLATES,j++,  generateRandomName(), 1 + random.nextInt(5));
     }
     private static int i = 0;
     private static String generateRandomName() {
         return NAME[i++];
     }
 
-    private static final String TEMPLATES = "INSERT INTO city(name, stress_id) VALUES('%s',%s);";
+    private static final String TEMPLATES = "INSERT INTO city(id, name, stress_id) VALUES(%s, '%s',%s);";
 
     private static final String[] NAME =
             {
