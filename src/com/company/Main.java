@@ -13,6 +13,7 @@ public class Main {
         int a;
         int b;
         int c;
+        int fdfd;
         Main generator = new Main();
         generator.generatorHuman();
         generator.generatorCity();
