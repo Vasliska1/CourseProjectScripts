@@ -111,4 +111,3 @@ CREATE TABLE factory_staff(
                               human_id INT REFERENCES human(id)
 );
 
-
