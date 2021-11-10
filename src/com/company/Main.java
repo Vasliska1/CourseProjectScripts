@@ -15,6 +15,7 @@ public class Main {
         int c;
         int fdfd;
         int dd;
+        int df;
         Main generator = new Main();
         generator.generatorHuman();
         generator.generatorCity();
