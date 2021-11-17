@@ -7,8 +7,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class Main {
+
     //11000 хьюм 1500 фабрик 3000 машин 2800 доставшиков 3000 рабочих 8200 клиентов 11500 адресов
     public static void main(String[] args) {
+        int a;
+        int b;
+        int c;
+        int fdfd;
         Main generator = new Main();
         generator.generatorHuman();
         generator.generatorCity();
